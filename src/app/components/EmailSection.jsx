@@ -4,39 +4,40 @@ import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import emailjs from "@emailjs/browser"
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    const servicesId = "service_nnzm77w";
+    const templatesId = "template_9j5gxey";
+    const publicKey = "KOxaNuS1TT0dFJRZV";
+    
     const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
+      from_name: name,
+      from_email: email,
+      message: message,
+      to_name: "Web_dev"
     };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
+  
+    emailjs.send(servicesId, templatesId, data, publicKey)
+      .then((response) => {
+        console.log("Email sent successfully", response);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        console.log("Email not sent", error);
+      });
   };
 
   return (
@@ -65,11 +66,7 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
-            Email sent successfully!
-          </p>
-        ) : (
+       
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
@@ -81,26 +78,30 @@ const EmailSection = () => {
               <input
                 name="email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
+                placeholder="artakp117@gmail.com"
               />
             </div>
             <div className="mb-6">
               <label
-                htmlFor="subject"
+                htmlFor="name"
                 className="text-white block text-sm mb-2 font-medium"
               >
-                Subject
+                Name
               </label>
               <input
-                name="subject"
+                name="name"
                 type="text"
-                id="subject"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
+                placeholder="Write Name"
               />
             </div>
             <div className="mb-6">
@@ -113,6 +114,8 @@ const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Let's talk about..."
               />
@@ -124,7 +127,6 @@ const EmailSection = () => {
               Send Message
             </button>
           </form>
-        )}
       </div>
     </section>
   );
