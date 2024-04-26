@@ -115,6 +115,7 @@ const EmailSection = () => {
                 name="message"
                 id="message"
                 value={message}
+                required
                 onChange={(e) => setMessage(e.target.value)}
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Let's talk about..."
