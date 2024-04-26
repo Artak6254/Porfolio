@@ -43,6 +43,19 @@ const TAB_DATA = [
       </ul>
     ),
   },
+  {
+    title: "Soft Skills",
+    id: "Soft_skils",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Communication</li>
+        <li>Problem-solving</li>
+        <li>Creativity</li>
+        <li>Flexibility</li>
+        <li>Work ethic</li>
+      </ul>
+    ),
+  }
 ];
 
 const AboutSection = () => {
@@ -91,7 +104,15 @@ const AboutSection = () => {
               {" "}
               Certifications{" "}
             </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("Soft_skils")}
+              active={tab === "Soft_skils"}
+            >
+              {" "}
+              Soft Skils{" "}
+            </TabButton>
           </div>
+          
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
