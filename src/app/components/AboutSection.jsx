@@ -13,8 +13,8 @@ const TAB_DATA = [
         <li>Node.js</li>
         <li>PHP</li>
         <li>MongoDb</li>
-        <li>MySql</li>
-        <li>HTMl</li>
+        <li>MySQL</li>
+        <li>HTML</li>
         <li>CSS</li>
         <li>Tailwind.css</li>
         <li>JavaScript</li>

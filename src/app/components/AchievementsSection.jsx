@@ -53,7 +53,7 @@ const AchievementsSection = () => {
                 />
                 {achievement.postfix}
               </h2>
-              <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
+              <p className="text-[#ADB7BE] text-base text-center">{achievement.metric}</p>
             </div>
           );
         })}
