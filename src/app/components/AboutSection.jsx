@@ -10,10 +10,11 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>Python</li>
-        <li>Node.js</li>
-        <li>PHP</li>
+        <li>Django</li>
+        <li>Django REST APi</li>
         <li>MongoDb</li>
         <li>MySQL</li>
+        <li>PostgresSQL</li>
         <li>HTML</li>
         <li>CSS</li>
         <li>Tailwind.css</li>
@@ -29,7 +30,6 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>Armenian Indian Center of Programing</li>
-        <li>University of California, Santa Cruz</li>
       </ul>
     ),
   },
@@ -77,7 +77,7 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Python Node.js, Express, MySQL, MongoDb,
+            working with JavaScript, React, Python, Django, REST API, MySQL, MongoDb,
             JS, REACT, HTML, CSS, Tailwind.css and Git. I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
@@ -96,13 +96,6 @@ const AboutSection = () => {
             >
               {" "}
               Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("Soft_skils")}
