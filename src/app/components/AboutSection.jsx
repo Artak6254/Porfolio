@@ -10,11 +10,6 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>Python</li>
-        <li>Django</li>
-        <li>Django REST APi</li>
-        <li>MongoDb</li>
-        <li>MySQL</li>
-        <li>PostgresSQL</li>
         <li>HTML</li>
         <li>CSS</li>
         <li>Tailwind.css</li>
