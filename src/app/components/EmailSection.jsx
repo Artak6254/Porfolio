@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 
 const EmailSection = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("astghikmkrtchyan707111@gmail.com");
+  const [email, setEmail] = useState("artakp117@gmail.com");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
