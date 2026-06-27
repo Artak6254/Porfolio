@@ -58,15 +58,6 @@ const projectsData = [
     tag: ["All"],
     gitUrl: "https://github.com/Artak6254/shelby",
     previewUrl: "https://github.com/Artak6254/shelby",
-  },
-   {
-    id: 5,
-    title: "ProNet IT",
-    description: "pronetIt",
-    image: "/images/projects/shelby.png",
-    tag: ["All"],
-    gitUrl: "https://github.com/Artak6254/shelby",
-    previewUrl: "https://github.com/Artak6254/shelby",
   }
 ];
 
